@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de las Madres</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebee;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Contenedor principal */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Diapositivas */
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 1.5s ease;
+            transform: translateY(50px);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Textos */
+        h1 {
+            color: #d23669;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 80%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .message h2 {
+            color: #e91e63;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .message p {
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Flechas de navegación */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-left {
+            left: 20px;
+        }
+
+        .arrow-right {
+            right: 20px;
+        }
+
+        .arrow i {
+            color: #e91e63;
+            font-size: 1.5rem;
+        }
+
+        /* Corazones flotantes */
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.7;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Indicadores de diapositiva */
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background-color: #e91e63;
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .message h2 {
+                font-size: 1.5rem;
+            }
+            
+            .message p {
+                font-size: 1rem;
+            }
+            
+            .arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .message {
+                padding: 20px;
+                max-width: 90%;
+            }
+            
+            .arrow {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Diapositiva 1 -->
+        <div class="slide active">
+            <h1>Feliz Día de las Madres</h1>
+            <div class="message">
+                <h2>Eres mi heroína de cada día</h2>
+                <p>Porque siempre estás ahí cuando te necesito, con tu amor infinito y tu paciencia sin límites. ❤️</p>
+            </div>
+        </div>
+        
+        <!-- Diapositiva 2 -->
+        <div class="slide">
+            <h1>Feliz Día de las Madres</h1>
+            <div class="message">
+                <h2>Gracias por ser mi guía</h2>
+                <p>Tu sabiduría y consejos iluminan mi camino cada día, enseñándome con tu ejemplo.</p>
+            </div>
+        </div>
+        
+        <!-- Diapositiva 3 -->
+        <div class="slide">
+            <h1>Feliz Día de las Madres</h1>
+            <div class="message">
+                <h2>Te quiero mucho mamá</h2>
+                <p>No hay palabras suficientes para expresar todo el amor que siento por ti. Eres única e irremplazable.</p>
+            </div>
+        </div>
+        
+        <!-- Flechas de navegación -->
+        <div class="arrow arrow-left">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="arrow arrow-right">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        
+        <!-- Indicadores -->
+        <div class="slide-indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+
+    <script>
+        // Crear corazones flotantes
+        function createHearts() {
+            const colors = ['#ff7675', '#fd79a8', '#e84393', '#ff9ff3', '#fdcb6e'];
+            const heartsCount = window.innerWidth < 480 ? 15 : 30;
+            
+            for (let i = 0; i < heartsCount; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                heart.style.animationDelay = (Math.random() * 5) + 's';
+                document.body.appendChild(heart);
+            }
+        }
+
+        // Control del slideshow
+        document.addEventListener('DOMContentLoaded', function() {
+            createHearts();
+            
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.arrow-left');
+            const nextBtn = document.querySelector('.arrow-right');
+            let currentSlide = 0;
+            
+            // Mostrar slide actual
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+                
+                currentSlide = index;
+            }
+            
+            // Siguiente slide
+            function nextSlide() {
+                let newIndex = currentSlide + 1;
+                if (newIndex >= slides.length) newIndex = 0;
+                showSlide(newIndex);
+            }
+            
+            // Slide anterior
+            function prevSlide() {
+                let newIndex = currentSlide - 1;
+                if (newIndex < 0) newIndex = slides.length - 1;
+                showSlide(newIndex);
+            }
+            
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Navegación por teclado
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+            
+            // Navegación por indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => showSlide(index));
+            });
+            
+            // Cambio automático cada 10 segundos (opcional)
+            setInterval(nextSlide, 10000);
+        });
+    </script>
+</body>
+</html>
